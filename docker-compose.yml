@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  cubelite:
+    image: dein_benutzername/cubelite:latest
+    container_name: cubelite
+    restart: unless-stopped
+    ports:
+      - "8887:80"
+    volumes:
+      - cubelite_db_data:/var/www/html/database
+
+volumes:
+  cubelite_db_data:
